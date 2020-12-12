@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .num {
+            width: 80px;
+            height: 70px;
+            font-size: 50px;
+            background-color: lightgray;
+            text-align: center;
+            border-left: 10px solid darkgrey;
+            border-top: 10px solid darkgrey;
+            border-bottom: 10px solid #5b5b5b;
+            border-right: 10px solid #5b5b5b;
+        }
+
+        .num:hover {
+            border-left: 10px solid #8baf99;
+            border-top: 10px solid #8baf99;
+            border-bottom: 10px solid #749380;
+            border-right: 10px solid #749380;
+        }
+
+        .num:active {
+            border-right: 10px solid darkgrey;
+            border-bottom: 10px solid darkgrey;
+            border-top: 10px solid #5b5b5b;
+            border-left: 10px solid #5b5b5b;
+            background-color: #d1d1d1;
+        }
+
+        #enter {
+            width: 150px;
+            font-size: 50px;
+            background-color: lightgray;
+            text-align: center;
+            border-left: 10px solid darkgrey;
+            border-top: 10px solid darkgrey;
+            border-bottom: 10px solid #5b5b5b;
+            border-right: 10px solid #5b5b5b;
+        }
+
+        #enter:hover {
+            border-left: 10px solid #8baf99;
+            border-top: 10px solid #8baf99;
+            border-bottom: 10px solid #749380;
+            border-right: 10px solid #749380;
+        }
+
+        #enter:active {
+            border-right: 10px solid darkgrey;
+            border-bottom: 10px solid darkgrey;
+            border-top: 10px solid #5b5b5b;
+            border-left: 10px solid #5b5b5b;
+            background-color: #e5e5e5;
+        }
+
+        #cs {
+            width: 76px;
+            height: 70px;
+            font-size: 50px;
+            background-color: lightgray;
+            text-align: center;
+            border-left: 10px solid darkgrey;
+            border-top: 10px solid darkgrey;
+            border-bottom: 10px solid #5b5b5b;
+            border-right: 10px solid #5b5b5b;
+        }
+
+        #cs:hover {
+            border-left: 10px solid #8baf99;
+            border-top: 10px solid #8baf99;
+            border-bottom: 10px solid #749380;
+            border-right: 10px solid #749380;
+        }
+
+        #cs:active {
+            border-right: 10px solid darkgrey;
+            border-bottom: 10px solid darkgrey;
+            border-top: 10px solid #5b5b5b;
+            border-left: 10px solid #5b5b5b;
+            background-color: #e5e5e5;
+        }
+
+        #ce {
+            width: 76px;
+            height: 70px;
+            font-size: 50px;
+            background-color: lightgray;
+            text-align: center;
+            border-left: 10px solid darkgrey;
+            border-top: 10px solid darkgrey;
+            border-bottom: 10px solid #5b5b5b;
+            border-right: 10px solid #5b5b5b;
+        }
+
+        #ce:hover {
+            border-left: 10px solid #8baf99;
+            border-top: 10px solid #8baf99;
+            border-bottom: 10px solid #749380;
+            border-right: 10px solid #749380;
+        }
+
+        #ce:active {
+            border-right: 10px solid darkgrey;
+            border-bottom: 10px solid darkgrey;
+            border-top: 10px solid #5b5b5b;
+            border-left: 10px solid #5b5b5b;
+            background-color: #e5e5e5;
+        }
+
+        #current {
+            font-size: 30px;
+            background-color: white;
+            border-left: 6px solid #444444;
+            border-top: 6px solid #444444;
+            border-bottom: 6px solid #5b5b5b;
+            border-right: 6px solid #5b5b5b;
+            width: 200px;
+            padding: 5px;
+            overflow: hidden;
+        }
+
+        .display {
+            font-size: 30px;
+            background-color: whitesmoke;
+            border-left: 5px solid #444444;
+            border-top: 5px solid #444444;
+            border-bottom: 5px solid #5b5b5b;
+            border-right: 5px solid #5b5b5b;
+            width: 400px;
+            padding: 5px;
+            margin-left: 50px;
+            margin-top: 25px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+        h1 {
+            width: 520px;
+            text-align: center;
+            font-size: 50px;
+            background-color: #707070;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            color: aliceblue;
+        }
+
+        #calcbac {
+            width: 500px;
+            height: 1000px;
+            background-color: #3a3a3a;
+            align-content: center;
+            border-left: 15px solid #444444;
+            border-top: 15px solid #444444;
+            border-bottom: 15px solid #5b5b5b;
+            border-right: 15px solid #5b5b5b;
+            border-radius: 45px;
+        }
+
+        table {
+            margin-left: 50px;
+
+        }
+
+        #nummin {
+            border-left: 5px solid #444444;
+            border-bottom: 5px solid #5b5b5b;
+            border-right: 5px solid #5b5b5b;
+            width: 400px;
+        }
+
+        #enttab {
+            border-left: 5px solid #444444;
+            border-top: 5px solid #444444;
+            border-right: 5px solid #5b5b5b;
+            width: 400px;
+            margin-top: 5px;
+        }
+
+        #blue {
+            background-color: #4c4c4c;
+            width: 520px;
+            height: 80px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        #debug {
+            font-size: 30px;
+            color: darkslateblue;
+        }
+
+    </style>
+    <script>
+        
+        var entry = "";
+        var sgn = "";
+
+        var s = {
+            X: 0,
+            Y: 0,
+            Z: 0,
+            T: 0
+        };
+
+        function enter() {
+            push(1 * (sgn + entry))
+            entry = "";
+            sgn = "";
+            showcurrent();
+        }
+
+        function showcurrent() {
+            document.getElementById("current").innerHTML = sgn + entry + "_";
+        }
+
+        function showdisplay() {
+            var S = document.getElementById("xy");
+            S.innerHTML = "";
+            for (v in s) {
+                S.innerHTML = v + ": " + s[v].toPrecision(10) + "<br/>" + S.innerHTML;
+            }
+        }
+
+        function push(newX) {
+            s.T = s.Z;
+            s.Z = s.Y;
+            s.Y = s.X;
+            s.X = newX;
+            showdisplay();
+        }
+
+        function siffra(n) {
+            entry = entry + n;
+            showcurrent();
+        }
+
+        function neg() {
+            if (sgn == "-") {
+                sgn = "";
+                showcurrent();
+            } else {
+                sgn = "-";
+                showcurrent();
+            }
+        }
+
+        function divop() {
+            s.X = s.X / s.Y;
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+
+        function multop() {
+            s.X = s.X * s.Y;
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+
+        function addop() {
+            s.X = s.X + s.Y;
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+
+        function subop() {
+            s.X = s.X - s.Y;
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+
+        function cscreen() {
+            s.X = 0;
+            s.Y = 0;
+            s.Z = 0;
+            s.T = 0;
+            showdisplay();
+        }
+
+        function ccurrent() {
+            entry = "";
+            sgn = "";
+            showcurrent();
+        }
+
+        function debag() {
+            var press = event.key;
+            var debug = document.getElementById("debug");
+            debug.innerHTML = press;
+
+            if (0 <= (1 * (press)) && (1 * (press)) <= 9) {
+                siffra(press);
+            } else if (press == '.') {
+                siffra('.');
+            } else if (press == 'c') {
+                cscreen();
+            } else if (press == 'Enter') {
+                enter();
+            } else if (press == 'x') {
+                ccurrent();
+            } else if (press == '/') {
+                divop();
+            } else if (press == '*') {
+                multop();
+            } else if (press == '-') {
+                subop();
+            } else if (press == '+') {
+                addop();
+            }
+        }
+        function pow() {
+            s.X = s.X ** s.Y;
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+        function square() {
+            s.X = s.X ** (1/2);
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+        function sinop() {
+            s.X = Math.sin(s.X);
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+        function tanop() {
+            s.X = Math.tan(s.X);
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+        function cosop() {
+            s.X = Math.cos(s.X);
+            s.Y = s.Z;
+            s.Z = s.Y;
+            showdisplay();
+        }
+
+    </script>
+</head>
+<heading>
+    <title>MyCalc</title>
+</heading>
+
+<body onkeypress="debag()">
+    <div id="blue">
+        <h1>My Calc</h1>
+    </div>
+    <br>
+    <div id="calcbac">
+        <br>
+        <table class="display">
+            <tr>
+                <td id="xy"></td>
+            </tr>
+        </table>
+            <script>showdisplay();</script>
+        <table>
+            <tr>
+                <td id="current">_</td>
+            </tr>
+
+        </table>
+        <table id="enttab">
+            <tr>
+                <td id="enter" colspan="2" onclick="enter()">Enter</td>
+                <td id="cs" onclick="cscreen()">Cs</td>
+                <td id="ce" onclick="ccurrent()">Ce</td>
+            </tr>
+        </table>
+        <table id="nummin">
+            <tr>
+                <td class="num" onclick="siffra('7')">7</td>
+                <td class="num" onclick="siffra('8')">8</td>
+                <td class="num" onclick="siffra('9')">9</td>
+                <td class="num" onclick="divop()">/</td>
+            </tr>
+            <tr>
+                <td class="num" onclick="siffra('4')">4</td>
+                <td class="num" onclick="siffra('5')">5</td>
+                <td class="num" onclick="siffra('6')">6</td>
+                <td class="num" onclick="multop()">*</td>
+            </tr>
+            <tr>
+                <td class="num" onclick="siffra('1')">1</td>
+                <td class="num" onclick="siffra('2')">2</td>
+                <td class="num" onclick="siffra('3')">3</td>
+                <td class="num" onclick="subop()">-</td>
+            </tr>
+            <tr>
+                <td class="num" onclick="neg()">±</td>
+                <td class="num" onclick="siffra('0')">0</td>
+                <td class="num" onclick="siffra('.')">.</td>
+                <td class="num" onclick="addop()">+</td>
+            </tr>
+            <tr>
+                <td class="num" onclick="pow()">x²</td>
+                <td class="num" onclick="square()">sr</td>
+                <td class="num" onclick="sinop()">sin</td>
+                <td class="num" onclick="tanop()">tan</td>
+            </tr>
+            <tr>
+                <td class="num" colspan="4" onclick="cosop()">cos</td>
+            </tr>
+        </table>
+    </div>
+    <h2 id="debug">Hello There!</h2>
+</body>
+
+</html>
